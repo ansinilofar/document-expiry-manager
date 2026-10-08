@@ -6,14 +6,18 @@ public class Document
     private String documentNumber;
     private LocalDate issueDate;
     private LocalDate expiryDate;
-    public Document(String documentType,String documentNumber,LocalDate issueDate,LocalDate expiryDate)
-    {
-        this.documentType=documentType;
-        this.documentNumber=documentNumber;
-        this.issueDate=issueDate;
-        this.expiryDate=expiryDate;
-
-    }
+    private Long id;
+    private int reminderDays;
+    public Document(Long id, String documentType, String documentNumber,
+                LocalDate issueDate, LocalDate expiryDate, int reminderDays)
+{
+    this.id = id;
+    this.documentType = documentType;
+    this.documentNumber = documentNumber;
+    this.issueDate = issueDate;
+    this.expiryDate = expiryDate;
+    this.reminderDays = reminderDays;
+}
     public String getDocumentType()
     {
         return documentType;
@@ -46,4 +50,23 @@ public class Document
     {
         this.expiryDate=expiryDate;
     }
+    public Long getId()
+{
+    return id;
+}
+
+public void setId(Long id)
+{
+    this.id = id;
+}
+
+public int getReminderDays()
+{
+    return reminderDays;
+}
+
+public void setReminderDays(int reminderDays)
+{
+    this.reminderDays = reminderDays;
+}
 }
